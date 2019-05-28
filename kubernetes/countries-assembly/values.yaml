@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: test_countries-assembly
-  tag: v2
+  tag: v1
   pullPolicy: IfNotPresent
 
 nameOverride: ""
