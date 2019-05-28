@@ -31,12 +31,13 @@ spec:
             httpGet:
               path: /health/live
               port: http
-            initialDelaySeconds: 50
+            initialDelaySeconds: 30
           readinessProbe:
-            httpGet:
-              path: /health/ready 
-              port: http
-            initialDelaySeconds: 50
+             exec:
+               command:
+               - sh
+               - /isReady.sh
+            initialDelaySeconds: 30
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
