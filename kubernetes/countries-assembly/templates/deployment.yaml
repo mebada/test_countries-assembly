@@ -13,6 +13,11 @@ spec:
     matchLabels:
       app.kubernetes.io/name: {{ include "countries-assembly.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
   template:
     metadata:
       labels:
