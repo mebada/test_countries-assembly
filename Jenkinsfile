@@ -47,7 +47,7 @@ pipeline {
                      sh "helm init"
 
 
-                     sh "helm upgrade dev-airports-assembly  kubernetes/countries-assembly/  --install --recreate-pods --force"
+                     sh "helm upgrade dev-countries-assembly  kubernetes/countries-assembly/  --install --recreate-pods --force"
                      sh "kubectl get pods"
                }
             
